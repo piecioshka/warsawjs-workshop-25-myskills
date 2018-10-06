@@ -22,22 +22,68 @@
 
 ## Wykorzystywane narzędzia
 
-* React.js
-* Redux
-* Firebase
-* WebStorage
-* npm: axios
-* npm: uuid
+* [x] React.js
+* [x] WebStorage
+* [x] npm: uuid
+* [ ] Redux
+* [ ] Firebase
+* [ ] npm: axios
 
 ## Krok po kroku 👣
 
 ### Etap 1
 
-* ...
+* [x] Zainstalować pluginy do Google Chrome:
+    + `React Developer Tools`
+    + `Redux DevTools`
 
-### Etap 2
+* [x] Zainstalować plugin do Visual Studio Code:
+    + `Reactjs code snippets`
+        - <https://github.com/xabikos/vscode-react>
 
-* ...
+* [x] Stworzyć pliki
+    + `index.html`
+    + `src/main.js`
+    + `src/component/app.js`
+
+* [x] W pliku `index.html`:
+    + stworzyć kontener z `id="app"`
+    + załączyć plik z `dist/bundle.js`
+
+* [x] Zainstalować zależności projektu:
+
+    npm i @babel/core @babel/preset-react babel-loader react react-dom webpack webpack-cli
+
+    Uwaga! W specjalnym przypadku będzie trzeba:
+
+    + zainstalować `@babel/preset-env`
+    + dopisać `@babel/preset-env` w `presets` w konfiguracji `Babela`
+        w pliku `webpack.config.js`
+
+* [x] Zainstalować serwer, który będzie serwował aplikację
+
+    npm i http-server
+
+    Uwaga! Dopisać zadanie do `package.json`
+
+    ```json
+    "start": "http-server"
+    ```
+
+* [x] Skonfigurować Webpacka
+    + Tryb = `development`
+    + Plik wejściowy = `entry`
+    + Plik wyjściowy = `output`
+    + Uruchomić `babel-loader` dla plików `.jsx?`
+    + Dodać preset `@babel/preset-react`
+
+* [ ] `react-router-dom`
+
+### Etap 2 - Redux
+
+* Zainstalować zależności:
+
+    npm i redux
 
 ### Etap 3
 
