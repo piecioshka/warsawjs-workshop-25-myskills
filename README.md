@@ -31,7 +31,9 @@
 
 ## Krok po kroku 👣
 
-### Etap 1
+### Etap 1 - Konfiguracja
+
+<details>
 
 * [x] Zainstalować pluginy do Google Chrome:
     + `React Developer Tools`
@@ -81,14 +83,58 @@
     + Uruchomić `babel-loader` dla plików `.jsx?`
     + Dodać preset `@babel/preset-react`
 
-* [ ] `react-router-dom`
+* [x] `react-router-dom`
 
-### Etap 2 - Redux
+</details>
+
+### Etap 2 - Budowa komponentów
+
+<details>
+
+* [x] Stworzenie komponentów:
+    + Aplikacja
+    + Intro
+    + Formularz
+
+</details>
+
+### Etap 3 - Persystencja
+
+<details>
+
+* Stworzenie helpera o możliwościach:
+    + Zapisywanie danych
+    + Odczytywanie danych
+    + Usuwanie danych
+
+    który wykorzystuje interfejs `LocalStorage`
+
+* Stworzenie helpera budującego
+
+</details>
+
+### Etap 4 - Redux
+
+<details>
 
 * Zainstalować zależności:
 
     npm i redux
 
-### Etap 3
+</details>
+
+### Etap 5 - Serwer HTTP
+
+<details>
+
+* Zainstalować paczkę `json-server`
+
+</details>
+
+### Etap 6 - Baza danych Firebase
+
+<details>
 
 * ...
+
+</details>

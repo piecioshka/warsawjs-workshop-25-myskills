@@ -1,27 +1,61 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 import Headline from './headline';
 
-import { isUserStore, getUserId, clearStoredUserId } from '../helpers/user';
+import UserIdHelper from '../helpers/user-id-helper';
+import AnswersHelper from '../helpers/answers-helper';
 
 class IntroComponent extends Component {
 
-    getButtonLabel() {
-        return isUserStore()
-            ? 'Display your profile'
-            : 'Start'
+    constructor(props) {
+        super(props);
+        this.state = {
+            startButtonLabel: 'Poczekaj...',
+            shouldDisplayRemoveButton: false
+        }
     }
 
-    redirectToForm() {
-        const userId = getUserId();
-        window.location.hash = `/user/${userId}`;
+    async componentDidMount() {
+        const isUserStored = await UserIdHelper.isUserStore();
+        this.setState({
+            startButtonLabel: isUserStored
+                ? 'Pokaż swój profil'
+                : 'Wpisz swoje umiejętności',
+            shouldDisplayRemoveButton: isUserStored
+        });
+    }
+
+    async redirectToForm() {
+        const isUserStored = await UserIdHelper.isUserStore();
+        const userId = await UserIdHelper.getUserId();
+
+        if (!isUserStored) {
+            await AnswersHelper.saveAnswers(userId, {});
+        }
+
+        // Oldschool way
+        // window.location.hash = `/user/${userId}`;
+
+        // React way
+        const { history } = this.props;
+        history.push(`/user/${userId}`);
+    }
+
+    removeUserAnswers() {
+        UserIdHelper.clearStoredUserId();
+
+        this.setState({
+            startButtonLabel: 'Wpisz swoje umiejętności',
+            shouldDisplayRemoveButton: false
+        });
     }
 
     render() {
         return (
             <div className="container">
                 <div className="jumbotron">
-                    <Headline/>
+                    <Headline />
 
                     <p className="lead">
                         Zdefiniuj swoje umiejętności
@@ -31,15 +65,15 @@ class IntroComponent extends Component {
                         className="btn btn-success"
                         onClick={() => this.redirectToForm()}
                     >
-                        {this.getButtonLabel()}
+                        {this.state.startButtonLabel}
                     </button>
 
-                    {isUserStore() &&
+                    {this.state.shouldDisplayRemoveButton &&
                         <button
-                            className="btn btn-danger"
-                            onClick={() => clearStoredUserId()}
+                            className="btn btn-danger ml-3"
+                            onClick={() => this.removeUserAnswers()}
                         >
-                            Clear
+                            Usuń zapisane wartości
                         </button>
                     }
                 </div>
@@ -48,4 +82,4 @@ class IntroComponent extends Component {
     }
 }
 
-export default IntroComponent;
+export default withRouter(IntroComponent);

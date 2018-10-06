@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
-import { isUserStore, getUserId } from '../helpers/user';
+import UserIdHelper from '../helpers/user-id-helper';
 
 class HeadlineComponent extends Component {
 
-    getHeaderLabel() {
-        return isUserStore()
-            ? getUserId()
-            : 'there';
+    constructor(props) {
+        super(props);
+        this.state = {
+            headerLabel: 'there'
+        }
+    }
+
+    async componentDidMount() {
+        if (await UserIdHelper.isUserStore()) {
+            const userId = await UserIdHelper.getUserId();
+
+            this.setState({
+                headerLabel: userId
+            });
+        }
     }
 
     render() {
@@ -14,7 +25,7 @@ class HeadlineComponent extends Component {
             <h1>
                 yo
                     <span className="badge badge-info">
-                    {this.getHeaderLabel()}
+                    {this.state.headerLabel}
                 </span>!
             </h1>
         );
