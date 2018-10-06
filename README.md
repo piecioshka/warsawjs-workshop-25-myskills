@@ -52,7 +52,9 @@
 
 * [x] Zainstalować zależności projektu:
 
+    ```bash
     npm i @babel/core @babel/preset-react babel-loader react react-dom webpack webpack-cli
+    ```
 
     Uwaga! W specjalnym przypadku będzie trzeba:
 
@@ -62,7 +64,9 @@
 
 * [x] Zainstalować serwer, który będzie serwował aplikację
 
+    ```bash
     npm i http-server
+    ```
 
     Uwaga! Dopisać zadanie do `package.json`
 

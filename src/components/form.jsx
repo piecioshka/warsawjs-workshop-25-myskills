@@ -50,6 +50,9 @@ class FormComponent extends Component {
 
                     <h3>JavaScript</h3>
 
+                    <div>
+                        
+                    </div>
                     <div className="form-group">
                         <label htmlFor="formControlRange">
                             Określ swój poziom znajomości języka JavaScript:

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Headline from './headline';
 
-import { isUserStore, getUserId, clearStoredUserId } from '../helpers/user.js';
+import { isUserStore, getUserId, clearStoredUserId } from '../helpers/user';
 
 class IntroComponent extends Component {
 
