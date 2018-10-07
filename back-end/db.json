@@ -1,36 +1,4 @@
 {
   "users": [
-    {
-      "id": "32a704c5-5594-45d9-8039-446afac6b043",
-      "answers": {
-        "hasVisitedWorkshops": "0",
-        "javascriptDurationExperience": ""
-      }
-    },
-    {
-      "id": "376e4765-ebb6-4f8c-b316-161a452c84c0",
-      "answers": {}
-    },
-    {
-      "answers": {
-        "hasVisitedWorkshops": "0",
-        "javascriptDurationExperience": "0",
-        "isSCSSLover": "1"
-      },
-      "id": "b66ee85c-8e9d-46ad-abe5-b25a9e3732c8"
-    },
-    {
-      "answers": {
-        "javascriptLevel": "10",
-        "hasVisitedWorkshops": "1",
-        "javascriptDurationExperience": "9",
-        "typescriptLevel": "10",
-        "isTypeScriptLover": "1",
-        "knowsInterpolationProcess": "1",
-        "knowsDifferenceBetweenDOMAndHTML": "1",
-        "isSCSSLover": "1"
-      },
-      "id": "f88620da-2009-44d4-a0b4-4ef923e3fae5"
-    }
   ]
 }
