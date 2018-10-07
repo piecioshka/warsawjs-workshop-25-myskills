@@ -25,9 +25,9 @@
 * [x] React.js
 * [x] WebStorage
 * [x] npm: uuid
+* [x] HTTP Storage (json-server)
 * [ ] Redux
 * [ ] Firebase
-* [ ] npm: axios
 
 ## Krok po kroku 👣
 
