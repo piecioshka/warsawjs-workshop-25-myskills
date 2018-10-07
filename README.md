@@ -52,18 +52,6 @@
     + stworzyć kontener z `id="app"`
     + załączyć plik z `dist/bundle.js`
 
-* [x] Zainstalować zależności projektu:
-
-    ```bash
-    npm i @babel/core @babel/preset-react babel-loader react react-dom webpack webpack-cli
-    ```
-
-    Uwaga! W specjalnym przypadku będzie trzeba:
-
-    + zainstalować `@babel/preset-env`
-    + dopisać `@babel/preset-env` w `presets` w konfiguracji `Babela`
-        w pliku `webpack.config.js`
-
 * [x] Zainstalować serwer, który będzie serwował aplikację
 
     ```bash
@@ -75,6 +63,18 @@
     ```json
     "start": "http-server"
     ```
+
+* [x] Zainstalować zależności projektu:
+
+    ```bash
+    npm i @babel/core @babel/preset-react babel-loader react react-dom webpack webpack-cli
+    ```
+
+    Uwaga! W specjalnym przypadku będzie trzeba:
+
+    + zainstalować `@babel/preset-env`
+    + dopisać `@babel/preset-env` w `presets` w konfiguracji `Babela`
+        w pliku `webpack.config.js`
 
 * [x] Skonfigurować Webpacka
     + Tryb = `development`
