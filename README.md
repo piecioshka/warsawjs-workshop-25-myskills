@@ -15,7 +15,7 @@
 * :white_check_mark: (Opcjonalnie) Prezentować pytanie po pytanie _(patrz: <https://typeform.com>)_
 * :white_check_mark: Zapisywać odpowiedzi w storage (przeglądarki, file systemie, Firebase, na serwerze - _patrz: CRUD_)
 * :white_check_mark: Wznawiać sesję po ponownym wejściu na serwis (pobierać ID ze storage przeglądarki)
-* :white_check_mark: (Opcjonalnie) Napisać testy i połączyć z CI (Travis, SemaphoreCI, CircleCI)
+* :white_check_mark: (Opcjonalnie) Napisać testy i połączyć z CI (Travis CI, Semaphore CI, Circle CI)
 
 ## Wykorzystywane narzędzia
 
