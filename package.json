@@ -1,46 +1,50 @@
 {
-    "private": true,
-    "name": "warsawjs-workshop-25-myskills",
-    "description": "",
-    "version": "1.0.0",
-    "license": "MIT",
-    "author": {
-        "name": "Piotr Kowalski",
-        "email": "piecioshka@gmail.com",
-        "url": "https://piecioshka.pl/"
-    },
-    "scripts": {
-        "clear": "rm -rf dist/ coverage/",
-        "clear:all": "rm -rf node_modules/ && npm run clear",
-        "build": "webpack",
-        "watch": "webpack -w",
-        "start": "http-server",
-        "start:server": "json-server back-end/db.json",
-        "lint": "eslint ."
-    },
-    "dependencies": {
-        "eslint": "^5.6.1",
-        "eslint-config-piecioshka": "^2.0.1",
-        "json-server": "^0.14.0",
-        "react": "^16.4.2",
-        "react-dom": "^16.4.2",
-        "react-router-dom": "^4.3.1",
-        "react-star-rating-component": "^1.4.1",
-        "uuid": "^3.3.2"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.1.2",
-        "@babel/preset-react": "^7.0.0",
-        "babel-loader": "^8.0.0",
-        "css-loader": "^1.0.0",
-        "node-sass": "^4.9.3",
-        "sass-loader": "^7.1.0",
-        "style-loader": "^0.23.0",
-        "webpack": "^4.16.5",
-        "webpack-cli": "^3.1.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:piecioshka/warsawjs-workshop-25-myskills.git"
-    }
+  "private": true,
+  "name": "warsawjs-workshop-25-myskills",
+  "description": "",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Piotr Kowalski",
+    "email": "piecioshka@gmail.com",
+    "url": "https://piecioshka.pl/"
+  },
+  "scripts": {
+    "clear": "rm -rf dist/ coverage/",
+    "clear:all": "rm -rf node_modules/ && npm run clear",
+    "build": "webpack",
+    "watch": "webpack -w",
+    "start": "http-server",
+    "start:server": "json-server back-end/db.json",
+    "lint": "eslint .",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "dependencies": {
+    "eslint": "^5.6.1",
+    "eslint-config-piecioshka": "^2.0.1",
+    "json-server": "^0.14.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-router-dom": "^4.3.1",
+    "react-star-rating-component": "^1.4.1",
+    "uuid": "^3.3.2",
+    "snyk": "^1.189.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.0",
+    "css-loader": "^1.0.0",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:piecioshka/warsawjs-workshop-25-myskills.git"
+  },
+  "snyk": true
 }
