@@ -1,9 +1,16 @@
+const path = require('path');
+const root = __dirname;
+
 module.exports = {
     mode: 'development',
-    entry: './src/main.jsx',
+
+    devtool: 'inline-source-map',
+
+    entry: path.join(root, 'src', 'scripts', 'main.jsx'),
+
     output: {
-        path: __dirname,
-        filename: 'dist/bundle.js'
+        filename: 'bundle.js',
+        path: path.join(root, 'dist')
     },
 
     resolve: {
@@ -17,18 +24,27 @@ module.exports = {
                 loader: 'babel-loader',
                 exclude: /node_modules/,
                 query: {
-                    "presets": [
-                        "@babel/preset-react",
+                    'presets': [
+                        '@babel/preset-react',
                     ],
                 }
-            }, {
+            },
+            {
                 test: /\.scss$/,
                 use: [
-                    "style-loader", // creates style nodes from JS strings
-                    "css-loader", // translates CSS into CommonJS
-                    "sass-loader" // compiles Sass to CSS, using Node Sass by default
+                    // creates style nodes from JS strings
+                    'style-loader',
+                    // translates CSS into CommonJS
+                    'css-loader',
+                    // compiles Sass to CSS, using Node Sass by default
+                    'sass-loader'
                 ]
-            }
+            },
+            {
+                test: /\.html$/,
+                loader: 'file-loader',
+                options: { name: '[name].[ext]' }
+            },
         ]
     }
 };
