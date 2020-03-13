@@ -2,6 +2,10 @@
 
 **WarsawJS Workshop #25**: Projekt przechowujący "moje" umiejętności
 
+## Demo 🎉
+
+<https://piecioshka.github.io/warsawjs-workshop-25-myskills/>
+
 ## Lista funkcji w aplikacji _(zakres projektu)_
 
 * :white_check_mark: Wygenerować unikalny URL dla każdej osoby wchodzącej do aplikacji
