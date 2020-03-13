@@ -3,7 +3,7 @@ module.exports = {
 
     // http://eslint.org/docs/user-guide/configuring#specifying-environments
     env: {
-        // browser: true,
+        browser: true,
         // node: true,
         // commonjs: true,
         es6: true,
@@ -15,7 +15,11 @@ module.exports = {
     },
 
     // http://eslint.org/docs/rules/
-    rules: {},
+    rules: {
+        'quote-props': 'off',
+        'no-console': 'off',
+        'sort-imports': 'off',
+    },
 
     // List of global variables.
     globals: {},

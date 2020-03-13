@@ -1,7 +1,5 @@
 # warsawjs-workshop-25-myskills
 
-[![dependencies](https://david-dm.org/piecioshka/warsawjs-workshop-25-myskills.svg)](https://github.com/piecioshka/warsawjs-workshop-25-myskills)
-
 **WarsawJS Workshop #25**: Projekt przechowujący "moje" umiejętności
 
 ## Lista funkcji w aplikacji _(zakres projektu)_
@@ -20,11 +18,9 @@
 ## Wykorzystywane narzędzia
 
 * [x] React.js
-* [x] WebStorage
-* [x] npm: uuid
-* [x] HTTP Storage (json-server)
+* [x] WebStorage (LocalStorage)
+* [x] HTTP Storage (`json-server`)
 * [ ] Redux
-* [ ] Firebase
 
 ## Krok po kroku 👣
 
@@ -88,50 +84,49 @@
 
 <details>
 
-* [x] Stworzenie komponentów:
+* [x] Stworzyć komponenty:
     + Aplikacja
     + Intro
     + Formularz
 
 </details>
 
-### Etap 3 - Persystencja
+### Etap 3 - Serwisy
 
 <details>
 
-* Stworzenie helpera o możliwościach:
+* [x] Stworzenie serwis o możliwościach:
     + Zapisywanie danych
     + Odczytywanie danych
     + Usuwanie danych
 
     który wykorzystuje interfejs `LocalStorage`
 
-* Stworzenie helpera budującego
+* Stworzenie serwis budujący
 
 </details>
 
-### Etap 4 - Redux
+### Etap 4 - Serwer HTTP
+
+<details>
+
+* [x] Stworzenie serwis o możliwościach:
+    + Zapisywanie danych
+    + Odczytywanie danych
+    + Usuwanie danych
+
+    który wykorzystuje zapytania `HTTP`
+
+* Zainstalować paczkę `json-server`
+
+</details>
+
+### Etap 5 - Redux (TODO)
 
 <details>
 
 * Zainstalować zależności:
 
     npm i redux
-
-</details>
-
-### Etap 5 - Serwer HTTP
-
-<details>
-
-* Zainstalować paczkę `json-server`
-
-</details>
-
-### Etap 6 - Baza danych Firebase
-
-<details>
-
-* ...
 
 </details>

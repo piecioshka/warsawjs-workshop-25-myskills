@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import StarRatingComponent from 'react-star-rating-component';
 
 import Headline from './headline';
-import UserIdHelper from '../helpers/user-id-helper';
-import AnswersHelper from '../helpers/answers-helper';
+import UserIdHelper from '../helpers/user-id.helper';
+import AnswersHelper from '../helpers/answers.helper';
 
 class FormComponent extends Component {
 
@@ -28,10 +28,11 @@ class FormComponent extends Component {
 
     async componentDidMount() {
         const userId = await UserIdHelper.getUserId();
+        const userName = await UserIdHelper.getUserId() || 'there';
         const userAnswers = await AnswersHelper.getByUserId(userId);
         const answers = Object.assign(this.state.answers, userAnswers);
 
-        this.setState({ answers });
+        this.setState({ userName, answers });
     }
 
     async onSubmit(evt) {
@@ -96,12 +97,10 @@ class FormComponent extends Component {
     }
 
     render() {
-        const userId = this.props.match.params.id;
-
         return (
             <div className="container">
                 <div className="jumbotron">
-                    <Headline />
+                    <Headline name={this.state.userName}/>
 
                     <p className="lead">
                         Odpowiadaj na pytania bez przekłamywania.

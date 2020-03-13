@@ -3,36 +3,44 @@ import { withRouter } from 'react-router-dom';
 
 import Headline from './headline';
 
-import UserIdHelper from '../helpers/user-id-helper';
-import AnswersHelper from '../helpers/answers-helper';
+import UserIdHelper from '../helpers/user-id.helper';
+import UserHelper from '../helpers/user.helper';
 
 class IntroComponent extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            startButtonLabel: 'Poczekaj...',
-            shouldDisplayRemoveButton: false
-        }
+            userName: 'there',
+            isUserCreated: false
+        };
     }
 
-    async componentDidMount() {
-        const isUserStored = await UserIdHelper.isUserStore();
-        this.setState({
-            startButtonLabel: isUserStored
-                ? 'Pokaż swój profil'
-                : 'Wpisz swoje umiejętności',
-            shouldDisplayRemoveButton: isUserStored
+    componentDidMount() {
+        this.updateUserState();
+    }
+
+    async updateUserState() {
+        const isUserCreated = await UserIdHelper.isUserIdCreated();
+        const userName = await UserIdHelper.getUserId() || 'there';
+        this.setState((state) => {
+            return {
+                ...state,
+                isUserCreated,
+                userName
+            }
         });
     }
 
-    async redirectToForm() {
-        const isUserStored = await UserIdHelper.isUserStore();
-        const userId = await UserIdHelper.getUserId();
+    async createUser() {
+        const userId = await UserIdHelper.createUserId();
+        console.log('IntroComponent#createUser', userId);
+        await UserHelper.createUser(userId);
+        await this.updateUserState();
+    }
 
-        if (!isUserStored) {
-            await AnswersHelper.saveAnswers(userId, {});
-        }
+    async redirectToForm() {
+        const userId = await UserIdHelper.getUserId();
 
         // Oldschool way
         // window.location.hash = `/user/${userId}`;
@@ -42,39 +50,50 @@ class IntroComponent extends Component {
         history.push(`/user/${userId}`);
     }
 
-    removeUserAnswers() {
-        UserIdHelper.clearStoredUserId();
-
-        this.setState({
-            startButtonLabel: 'Wpisz swoje umiejętności',
-            shouldDisplayRemoveButton: false
-        });
+    async removeUser() {
+        const userId = await UserIdHelper.getUserId();
+        await UserIdHelper.clearStoredUserId();
+        await this.updateUserState();
+        await UserHelper.removeUser(userId);
     }
 
     render() {
         return (
             <div className="container">
                 <div className="jumbotron">
-                    <Headline />
+                    <Headline name={this.state.userName}/>
 
-                    <p className="lead">
-                        Zdefiniuj swoje umiejętności
-                    </p>
+                    {!this.state.isUserCreated &&
+                        <>
+                            <button
+                                className="btn btn-success"
+                                onClick={() => this.createUser()}
+                            >
+                                Stwórz użytkownika
+                            </button>
+                        </>
+                    }
 
-                    <button
-                        className="btn btn-success"
-                        onClick={() => this.redirectToForm()}
-                    >
-                        {this.state.startButtonLabel}
-                    </button>
+                    {this.state.isUserCreated &&
+                        <>
+                            <p className="lead">
+                                Zdefiniuj swoje umiejętności
+                            </p>
 
-                    {this.state.shouldDisplayRemoveButton &&
-                        <button
-                            className="btn btn-danger ml-3"
-                            onClick={() => this.removeUserAnswers()}
-                        >
-                            Usuń zapisane wartości
-                        </button>
+                            <button
+                                className="btn btn-success"
+                                onClick={() => this.redirectToForm()}
+                            >
+                                Wpisz swoje umiejętności
+                            </button>
+
+                            <button
+                                className="btn btn-danger ml-3"
+                                onClick={() => this.removeUser()}
+                            >
+                                Usuń zapisane wartości
+                            </button>
+                        </>
                     }
                 </div>
             </div>

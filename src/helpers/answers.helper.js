@@ -1,5 +1,5 @@
-import HttpUsersStorageHelper from './http-users-storage-helper';
-import LocalStorageHelper from './local-storage-helper';
+import HttpUsersStorageService from '../services/http-users-storage.service';
+// import LocalStorageService from '../services/local-storage.service';
 
 class AnswersHelper {
 
@@ -8,26 +8,24 @@ class AnswersHelper {
     }
 
     async getByUserId(userId) {
+        console.log('AnswersHelper#getByUserId');
         const EMPTY_RESPONSE = {};
         try {
             const user = await this.storage.read(userId);
             return user && user.answers
                 ? user.answers
-                : EMPTY_RESPONSE
+                : EMPTY_RESPONSE;
         } catch (err) {
             return EMPTY_RESPONSE;
         }
     }
 
-    async saveAnswers(userId, answers) {
-        return await this.storage.create(userId, { answers });
-    }
-
     async updateAnswers(userId, answers) {
+        console.log('AnswersHelper#updateAnswers');
         return await this.storage.update(userId, { answers });
     }
 
 }
 
-export default new AnswersHelper(HttpUsersStorageHelper);
-// export default new AnswersHelper(LocalStorageHelper);
+export default new AnswersHelper(HttpUsersStorageService);
+// export default new AnswersHelper(LocalStorageService);
