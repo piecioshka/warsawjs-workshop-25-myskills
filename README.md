@@ -1,6 +1,6 @@
 # warsawjs-workshop-25-myskills
 
-**WarsawJS Workshop #25**: Projekt przechowujący "moje" umiejętności
+⛩️ WarsawJS Workshop #25 — React.js — Projekt przechowujący "moje" umiejętności
 
 ## Demo 🎉
 
