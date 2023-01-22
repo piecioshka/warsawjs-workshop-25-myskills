@@ -2,7 +2,7 @@
 
 ⛩️ WarsawJS Workshop #25 — React.js
 
-## Demo 🎉
+## Preview 🎉
 
 <https://piecioshka.github.io/warsawjs-workshop-25-myskills/>
 
