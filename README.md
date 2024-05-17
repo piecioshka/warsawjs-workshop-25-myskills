@@ -8,23 +8,22 @@
 
 ## Lista funkcji w aplikacji _(zakres projektu)_
 
-* :white_check_mark: Wygenerować unikalny URL dla każdej osoby wchodzącej do aplikacji
-* :white_check_mark: Zapisać unikalny identyfikator w storage przeglądarki
-* :white_check_mark: (Opcjonalnie) Uwierzytelniać użytkownika za pomocą GitHuba albo Facebooka
-* :white_check_mark: Wczytać z pliku listę pytań dla programisty front-end
-* :white_check_mark: (Opcjonalnie) Zdefiniować pytania dla innych umiejętności i dać użytkownikowi wybór
-* :white_check_mark: Zaprezentować pytania użytkownikowi w formie formularza z różnymi kontrolkami
-* :white_check_mark: (Opcjonalnie) Prezentować pytanie po pytanie _(patrz: <https://typeform.com>)_
-* :white_check_mark: Zapisywać odpowiedzi w storage (przeglądarki, file systemie, Firebase, na serwerze - _patrz: CRUD_)
-* :white_check_mark: Wznawiać sesję po ponownym wejściu na serwis (pobierać ID ze storage przeglądarki)
-* :white_check_mark: (Opcjonalnie) Napisać testy i połączyć z CI (Travis CI, Semaphore CI, Circle CI)
+* ✅ Wygenerować unikalny URL dla każdej osoby wchodzącej do aplikacji
+* ✅ Zapisać unikalny identyfikator w storage przeglądarki
+* 🎁 (Opcjonalnie) Uwierzytelniać użytkownika za pomocą GitHuba albo Facebooka
+* ✅ Wczytać z pliku listę pytań dla programisty front-end
+* 🎁 (Opcjonalnie) Zdefiniować pytania dla innych umiejętności i dać użytkownikowi wybór
+* ✅ Zaprezentować pytania użytkownikowi w formie formularza z różnymi kontrolkami
+* 🎁 (Opcjonalnie) Prezentować pytanie po pytanie _(patrz: <https://typeform.com>)_
+* ✅ Zapisywać odpowiedzi w storage (przeglądarki, file systemie, Firebase, na serwerze - _patrz: CRUD_)
+* ✅ Wznawiać sesję po ponownym wejściu na serwis (pobierać ID ze storage przeglądarki)
+* 🎁 (Opcjonalnie) Napisać testy i połączyć z CI (Travis CI, Semaphore CI, Circle CI)
 
 ## Wykorzystywane narzędzia
 
 * [x] React.js
 * [x] WebStorage (LocalStorage)
 * [x] HTTP Storage (`json-server`)
-* [ ] Redux
 
 ## Krok po kroku 👣
 
@@ -34,7 +33,6 @@
 
 * [x] Zainstalować pluginy do Google Chrome:
     + `React Developer Tools`
-    + `Redux DevTools`
 
 * [x] Zainstalować plugin do Visual Studio Code:
     + `Reactjs code snippets`
@@ -122,15 +120,5 @@
     który wykorzystuje zapytania `HTTP`
 
 * Zainstalować paczkę `json-server`
-
-</details>
-
-### Etap 5 - Redux (TODO)
-
-<details>
-
-* Zainstalować zależności:
-
-    npm i redux
 
 </details>
