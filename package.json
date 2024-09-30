@@ -17,7 +17,7 @@
         "deploy": "NODE_DEBUG=gh-pages gh-pages -d dist/",
         "watch": "webpack -w",
         "dev": "webpack-dev-server",
-        "start": "http-server dist/",
+        "start": "http-server dist/ -c-1",
         "start:server": "json-server back-end/db.json",
         "lint": "eslint ."
     },
